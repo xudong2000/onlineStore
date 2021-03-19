@@ -1,29 +1,34 @@
 <template>
   <div id="tabBar">
-    <div>
-      <van-icon name="wap-home-o" />
+    <router-link to="/home">
+      <van-icon name="wap-home-o" v-show="$route.path !== '/home'" />
+      <van-icon name="wap-home" v-show="$route.path === '/home'" />
       <span>首页</span>
-    </div>
+    </router-link>
 
-    <div>
-      <van-icon name="apps-o" />
+    <router-link to="/category">
+      <van-icon name="shop-collect-o" v-show="$route.path !== '/category'" />
+      <van-icon name="shop-collect" v-show="$route.path === '/category'" />
       <span>分类</span>
-    </div>
+    </router-link>
 
-    <div>
-      <van-icon name="more-o" />
+    <router-link to="/message">
+      <van-icon name="more-o" v-show="$route.path !== '/message'" />
+      <van-icon name="more" v-show="$route.path === '/message'" />
       <span>消息</span>
-    </div>
+    </router-link>
 
-    <div>
-      <van-icon name="shopping-cart-o" />
+    <router-link to="/cart">
+      <van-icon name="shopping-cart-o" v-show="$route.path !== '/cart'" />
+      <van-icon name="shopping-cart" v-show="$route.path === '/cart'" />
       <span>购物车</span>
-    </div>
+    </router-link>
 
-    <div>
-      <van-icon name="manager-o" />
+    <router-link to="/profile">
+      <van-icon name="manager-o" v-show="$route.path !== '/profile'" />
+      <van-icon name="manager" v-show="$route.path === '/profile'" />
       <span>我的</span>
-    </div>
+    </router-link>
   </div>
 </template>
 
@@ -44,7 +49,7 @@ export default {
   box-shadow: -1px 0 5px 0 #ccc;
   text-align: center;
   display: flex;
-  div {
+  a {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -57,7 +62,7 @@ export default {
   span {
     flex: 1;
     line-height: 15px;
-    font-size: 13px;
+    font-size: 0.1625rem;
   }
 }
 </style>

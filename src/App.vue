@@ -1,12 +1,6 @@
 <template>
   <div id="app">
-    <van-search
-      v-model="value"
-      shape="round"
-      background="#fff"
-      placeholder="请输入您要搜索的商品名称"
-      disabled
-    />
+    <router-view />
     <tab-bar />
   </div>
 </template>
@@ -19,15 +13,10 @@ export default {
   components: {
     TabBar,
   },
-  data() {
-    return {
-      value: "",
-    };
-  },
 };
 </script>
 
-<style lang="less">
+<style>
 #app {
   height: 100vh;
   background-color: #efefef;
